@@ -1,0 +1,22 @@
+﻿@if (Request.IsAuthenticated)
+{
+    var userClaims = User.Identity as System.Security.Claims.ClaimsIdentity;
+    var name = userClaims?.FindFirst("name")?.Value;
+    <text>
+        <ul class="nav navbar-nav navbar-right">
+                <li>
+                    @*@Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "UserProfile", routeValues: null, htmlAttributes: null)*@
+                    @Html.ActionLink("Hello " + name + "!", "Index", "UserProfile", routeValues: null, htmlAttributes: null)
+                </li>
+            <li>
+                @Html.ActionLink("Sign out", "SignOut", "Account")
+            </li>
+        </ul>
+    </text>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Sign in", "SignIn", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

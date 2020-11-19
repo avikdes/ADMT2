@@ -1,0 +1,12 @@
+{
+  "ValidIssuers": [
+    {
+      "Name": "Global",
+      "Id": "d2278da3-ebe2-40d6-97a3-02549c47bfa1"
+    },
+    {
+      "Name": "SSDBOrg",
+      "Id": "d92910fa-4f9c-43c8-86ce-e6d7ff417aa2"
+    }
+  ]
+}
